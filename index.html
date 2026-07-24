@@ -1,80 +1,152 @@
 <!DOCTYPE html>
+<!--
+==================================================
+CORA v1.0
+Asistente Virtual
+Red Binacional de Corazones
+Preparado para GitHub Pages
+==================================================
+-->
 <html lang="es-MX">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="CORA - Asistente Virtual de Red Binacional de Corazones">
-  <title>CORA | Red Binacional de Corazones</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CORA - Asistente Virtual de Red Binacional de Corazones">
+    <title>CORA | Red Binacional de Corazones</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="style.css">
+    <!-- Hoja de estilos -->
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
 <header class="header">
-    <img src="images/logo-red-binacional.png"
-         alt="Logo de Red Binacional de Corazones"
-         class="logo">
 
-    <h1>CORA</h1>
-    <p class="subtitle">Asistente Virtual</p>
-</header>
+    <div class="brand">
 
-<main>
+        <img src="images/logo-red-binacional.png"
+             alt="Logo Red Binacional de Corazones"
+             class="logo">
 
-<section class="chat-wrapper">
+        <div>
+            <h1>CORA</h1>
+            <p>Asistente Virtual</p>
+        </div>
 
-    <div id="chat" class="chat-area" aria-live="polite">
-        <!-- Todo el contenido será generado desde script.js -->
     </div>
 
-</section>
+</header>
+
+<main class="main-container">
+
+    <!-- Bienvenida -->
+
+    <section class="welcome-section">
+
+        <img src="images/cora-mascota.png"
+             alt="CORA, mascota oficial"
+             class="cora">
+
+        <div class="welcome-card">
+
+            <h2>Hola 👋</h2>
+
+            <p>
+                Soy <strong>CORA</strong>, la asistente virtual de
+                <strong>Red Binacional de Corazones</strong>.
+            </p>
+
+            <p>
+                Estoy aquí para escucharte, orientarte y ayudarte
+                de manera segura.
+            </p>
+
+            <p>
+                Puedo ayudarte a conocer nuestros programas,
+                brindarte información y ponerte en contacto
+                con nuestro equipo cuando lo necesites.
+            </p>
+
+            <div class="important-note">
+
+                <strong>Importante</strong>
+
+                <p>
+                    CORA no realiza diagnósticos,
+                    no brinda terapia y no sustituye la atención
+                    médica, psicológica, jurídica
+                    ni los servicios de emergencia.
+                    Mi función es orientar y canalizar.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Chat -->
+    <section id="chat-container" class="chat-container" aria-live="polite">
+        <!-- Todo el contenido será generado por script.js -->
+    </section>
+
+    <!-- Indicador de escritura -->
+    <div id="typing-indicator" class="typing-indicator" hidden>
+        <span></span><span></span><span></span>
+    </div>
 
 </main>
 
-<a href="https://wa.me/526644080452"
-   class="floating-whatsapp"
-   target="_blank"
-   aria-label="Hablar con un asesor">
+<!-- Botón flotante -->
+<a class="floating-whatsapp"
+   href="https://wa.me/526644080452?text=Hola,%20necesito%20orientaci%C3%B3n%20por%20parte%20de%20Red%20Binacional%20de%20Corazones."
+   target="_blank">
+
 💬 Hablar con un asesor
+
 </a>
 
-<button id="emergencyButton"
-        class="floating-emergency"
-        aria-label="Necesito ayuda inmediata">
-🚨 Necesito ayuda inmediata
+<!-- Botón de apoyo -->
+<button id="support-button"
+        class="floating-support">
+
+💙 Necesito apoyo
+
 </button>
 
 <section class="social-section">
 
-<h2>Síguenos</h2>
+    <h2>Síguenos</h2>
 
-<div class="social-links">
+    <div class="social-links">
 
-<a href="https://www.facebook.com/redbinacionaldecorazones"
-target="_blank">Facebook</a>
+        <a href="https://www.facebook.com/redbinacionaldecorazones" target="_blank">
+            Facebook
+        </a>
 
-<a href="https://www.instagram.com/red.de.corazones"
-target="_blank">Instagram</a>
+        <a href="https://www.instagram.com/red.de.corazones" target="_blank">
+            Instagram
+        </a>
 
-</div>
+    </div>
 
 </section>
 
 <footer>
 
-<h3>Red Binacional de Corazones</h3>
+    <h3>Red Binacional de Corazones</h3>
 
-<p>Protegiendo la infancia, fortaleciendo comunidades.</p>
+    <p>Protegiendo la infancia, fortaleciendo comunidades.</p>
 
-<p>📱 WhatsApp<br>
-+52 (664) 408 04 52</p>
+    <p>📱 WhatsApp<br>+52 (664) 408 04 52</p>
 
-<p>© 2026 Red Binacional de Corazones.</p>
+    <p>© 2026 Red Binacional de Corazones.<br>
+    Todos los derechos reservados.</p>
 
 </footer>
 
