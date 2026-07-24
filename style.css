@@ -1,0 +1,1143 @@
+/*==================================================
+  CORA v1.0
+  Red Binacional de Corazones
+  style.css
+  Autor: ChatGPT + Amix
+==================================================*/
+
+/*=========================
+= Variables Institucionales
+==========================*/
+
+:root{
+
+    --color-azul:#0057B8;
+    --color-rojo:#E53935;
+    --color-verde:#43A047;
+    --color-blanco:#FFFFFF;
+    --color-fondo:#F5F8FC;
+    --color-gris:#E5E7EB;
+    --color-texto:#2C3E50;
+
+    --radio:20px;
+
+    --sombra:0 10px 30px rgba(0,0,0,.08);
+
+    --transicion:.30s ease;
+
+    --ancho:1200px;
+
+}
+
+/*=========================
+= Reset
+==========================*/
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:'Poppins',sans-serif;
+
+    background:var(--color-fondo);
+
+    color:var(--color-texto);
+
+    line-height:1.6;
+
+}
+
+/*=========================
+= Fondo
+==========================*/
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+    radial-gradient(circle at top left,
+    rgba(0,87,184,.08),
+    transparent 45%),
+
+    radial-gradient(circle at bottom right,
+    rgba(229,57,53,.06),
+    transparent 40%),
+
+    radial-gradient(circle at center,
+    rgba(67,160,71,.05),
+    transparent 55%);
+
+    z-index:-1;
+
+}
+
+/*=========================
+= Header
+==========================*/
+
+.header{
+
+    width:100%;
+
+    background:white;
+
+    box-shadow:var(--sombra);
+
+    padding:20px 30px;
+
+    position:sticky;
+
+    top:0;
+
+    z-index:999;
+
+}
+
+.brand{
+
+    max-width:var(--ancho);
+
+    margin:auto;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+.logo{
+
+    width:75px;
+
+    height:auto;
+
+}
+
+.brand h1{
+
+    color:var(--color-azul);
+
+    font-size:2rem;
+
+    font-weight:700;
+
+}
+
+.brand p{
+
+    color:#6B7280;
+
+    font-size:.95rem;
+
+}
+
+/*=========================
+= Contenedor Principal
+==========================*/
+
+.main-container{
+
+    max-width:900px;
+
+    margin:50px auto;
+
+    padding:25px;
+
+}
+
+/*=========================
+= Bienvenida
+==========================*/
+
+.welcome-section{
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    justify-content:center;
+
+}
+
+/*=========================
+= Mascota
+==========================*/
+
+.cora{
+
+    width:230px;
+
+    margin-bottom:30px;
+
+    animation:float 4s ease-in-out infinite;
+
+    user-select:none;
+
+}
+
+/*=========================
+= Tarjeta
+==========================*/
+
+.welcome-card{
+
+    width:100%;
+
+    background:white;
+
+    border-radius:25px;
+
+    padding:40px;
+
+    box-shadow:var(--sombra);
+
+    border-top:6px solid var(--color-azul);
+
+}
+
+.welcome-card h2{
+
+    color:var(--color-azul);
+
+    margin-bottom:20px;
+
+    font-size:2rem;
+
+}
+
+.welcome-card p{
+
+    margin-bottom:18px;
+
+    font-size:1rem;
+
+}
+
+/*=========================
+= Aviso Importante
+==========================*/
+
+.important-note{
+
+    margin-top:25px;
+
+    padding:20px;
+
+    border-left:6px solid var(--color-verde);
+
+    background:#F3FFF4;
+
+    border-radius:15px;
+
+}
+
+.important-note strong{
+
+    color:var(--color-verde);
+
+    display:block;
+
+    margin-bottom:8px;
+
+}
+
+/*=========================
+= Contenedor del Chat
+==========================*/
+
+.chat-container{
+
+    margin-top:35px;
+
+    background:white;
+
+    border-radius:25px;
+
+    min-height:250px;
+
+    padding:30px;
+
+    box-shadow:var(--sombra);
+
+}
+
+/*=========================
+= Indicador de Escritura
+==========================*/
+
+.typing-indicator{
+
+    display:flex;
+
+    gap:8px;
+
+    margin-top:15px;
+
+    padding-left:15px;
+
+}
+
+.typing-indicator span{
+
+    width:10px;
+
+    height:10px;
+
+    background:var(--color-azul);
+
+    border-radius:50%;
+
+    animation:typing 1s infinite;
+
+}
+
+.typing-indicator span:nth-child(2){
+
+    animation-delay:.20s;
+
+}
+
+.typing-indicator span:nth-child(3){
+
+    animation-delay:.40s;
+
+}
+
+/*=========================
+= Animaciones
+==========================*/
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-10px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+@keyframes typing{
+
+    0%,80%,100%{
+
+        opacity:.3;
+
+        transform:scale(.8);
+
+    }
+
+    40%{
+
+        opacity:1;
+
+        transform:scale(1);
+
+    }
+
+}/*==================================================
+  PARTE 2
+  Chat, botones, footer y responsive
+==================================================*/
+
+
+/*=========================
+= Mensajes del Chat
+==========================*/
+
+.message{
+    display:flex;
+    align-items:flex-start;
+    gap:15px;
+    margin-bottom:25px;
+    animation:fadeIn .4s ease;
+}
+
+.message.bot{
+
+    justify-content:flex-start;
+
+}
+
+.message.user{
+
+    justify-content:flex-end;
+
+}
+
+.avatar{
+
+    width:50px;
+
+    height:50px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    box-shadow:var(--sombra);
+
+}
+
+.bubble{
+
+    max-width:80%;
+
+    padding:18px 22px;
+
+    border-radius:20px;
+
+    font-size:15px;
+
+    line-height:1.6;
+
+}
+
+.bot .bubble{
+
+    background:white;
+
+    border-left:6px solid var(--color-azul);
+
+}
+
+.user .bubble{
+
+    background:var(--color-azul);
+
+    color:white;
+
+}
+
+
+/*=========================
+= Botones del Chat
+==========================*/
+
+.options{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+    margin-top:25px;
+
+}
+
+.option-button{
+
+    border:none;
+
+    background:var(--color-azul);
+
+    color:white;
+
+    padding:18px;
+
+    border-radius:15px;
+
+    font-size:16px;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:var(--transicion);
+
+}
+
+.option-button:hover{
+
+    transform:translateY(-3px);
+
+    background:#0047a0;
+
+    box-shadow:0 15px 25px rgba(0,87,184,.25);
+
+}
+
+.option-button:active{
+
+    transform:scale(.98);
+
+}
+
+
+/*=========================
+= Botón WhatsApp
+==========================*/
+
+.floating-whatsapp{
+
+    position:fixed;
+
+    bottom:25px;
+
+    right:25px;
+
+    background:#25D366;
+
+    color:white;
+
+    text-decoration:none;
+
+    padding:16px 24px;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    box-shadow:var(--sombra);
+
+    transition:var(--transicion);
+
+    z-index:999;
+
+}
+
+.floating-whatsapp:hover{
+
+    transform:translateY(-4px);
+
+}
+
+
+/*=========================
+= Botón Necesito Apoyo
+==========================*/
+
+.floating-support{
+
+    position:fixed;
+
+    bottom:95px;
+
+    right:25px;
+
+    background:var(--color-azul);
+
+    color:white;
+
+    border:none;
+
+    padding:16px 24px;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:15px;
+
+    font-weight:600;
+
+    box-shadow:var(--sombra);
+
+    transition:var(--transicion);
+
+    z-index:999;
+
+}
+
+.floating-support:hover{
+
+    background:#0047a0;
+
+    transform:translateY(-4px);
+
+}
+
+
+/*=========================
+= Redes Sociales
+==========================*/
+
+.social-section{
+
+    max-width:900px;
+
+    margin:60px auto;
+
+    text-align:center;
+
+}
+
+.social-section h2{
+
+    color:var(--color-azul);
+
+    margin-bottom:25px;
+
+}
+
+.social-links{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
+}
+
+.social-links a{
+
+    text-decoration:none;
+
+    color:white;
+
+    background:var(--color-verde);
+
+    padding:15px 30px;
+
+    border-radius:50px;
+
+    transition:var(--transicion);
+
+    font-weight:600;
+
+}
+
+.social-links a:hover{
+
+    background:#2E7D32;
+
+    transform:translateY(-3px);
+
+}
+
+
+/*=========================
+= Footer
+==========================*/
+
+footer{
+
+    margin-top:80px;
+
+    background:var(--color-azul);
+
+    color:white;
+
+    text-align:center;
+
+    padding:50px 25px;
+
+}
+
+footer h3{
+
+    margin-bottom:15px;
+
+    font-size:28px;
+
+}
+
+footer p{
+
+    margin:10px 0;
+
+}
+
+
+/*=========================
+= Responsive
+==========================*/
+
+@media(max-width:768px){
+
+    .brand{
+
+        flex-direction:column;
+
+        text-align:center;
+
+    }
+
+    .logo{
+
+        width:65px;
+
+    }
+
+    .cora{
+
+        width:180px;
+
+    }
+
+    .welcome-card{
+
+        padding:25px;
+
+    }
+
+    .bubble{
+
+        max-width:100%;
+
+    }
+
+    .floating-whatsapp{
+
+        right:15px;
+
+        bottom:15px;
+
+        padding:14px 18px;
+
+        font-size:14px;
+
+    }
+
+    .floating-support{
+
+        right:15px;
+
+        bottom:80px;
+
+        padding:14px 18px;
+
+        font-size:14px;
+
+    }
+
+}
+
+
+/*=========================
+= Animaciones
+==========================*/
+
+@keyframes fadeIn{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(20px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}/*==================================================
+  PARTE 3
+  Mejoras visuales, accesibilidad y efectos finales
+==================================================*/
+
+
+/*=========================
+= Scroll personalizado
+==========================*/
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#EDF2F7;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--color-azul);
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#0047A0;
+
+}
+
+
+/*=========================
+= Selección de texto
+==========================*/
+
+::selection{
+
+    background:var(--color-azul);
+
+    color:white;
+
+}
+
+
+/*=========================
+= Enlaces
+==========================*/
+
+a{
+
+    color:var(--color-azul);
+
+    transition:var(--transicion);
+
+}
+
+a:hover{
+
+    opacity:.85;
+
+}
+
+
+/*=========================
+= Imágenes
+==========================*/
+
+img{
+
+    max-width:100%;
+
+    display:block;
+
+}
+
+
+/*=========================
+= Formularios
+==========================*/
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+    padding:15px;
+
+    border:2px solid var(--color-gris);
+
+    border-radius:15px;
+
+    font-family:inherit;
+
+    font-size:15px;
+
+    outline:none;
+
+    transition:var(--transicion);
+
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    border-color:var(--color-azul);
+
+    box-shadow:0 0 0 4px rgba(0,87,184,.12);
+
+}
+
+
+/*=========================
+= Botones generales
+==========================*/
+
+button{
+
+    font-family:inherit;
+
+}
+
+button:focus{
+
+    outline:none;
+
+}
+
+
+/*=========================
+= Tarjetas
+==========================*/
+
+.card{
+
+    background:white;
+
+    border-radius:20px;
+
+    padding:25px;
+
+    box-shadow:var(--sombra);
+
+    transition:var(--transicion);
+
+}
+
+.card:hover{
+
+    transform:translateY(-5px);
+
+}
+
+
+/*=========================
+= Separadores
+==========================*/
+
+hr{
+
+    border:none;
+
+    border-top:1px solid var(--color-gris);
+
+    margin:30px 0;
+
+}
+
+
+/*=========================
+= Títulos
+==========================*/
+
+h1,h2,h3,h4{
+
+    font-weight:700;
+
+}
+
+p{
+
+    margin-bottom:15px;
+
+}
+
+
+/*=========================
+= Efecto de carga
+==========================*/
+
+.fade-up{
+
+    animation:fadeUp .8s ease both;
+
+}
+
+.fade{
+
+    animation:fade .5s ease both;
+
+}
+
+
+/*=========================
+= Pulso del botón apoyo
+==========================*/
+
+.floating-support{
+
+    animation:pulseSupport 2.8s infinite;
+
+}
+
+
+/*=========================
+= Hover de la mascota
+==========================*/
+
+.cora:hover{
+
+    transform:scale(1.05);
+
+    transition:.4s;
+
+}
+
+
+/*=========================
+= Contenedor general
+==========================*/
+
+section{
+
+    margin-bottom:50px;
+
+}
+
+
+/*=========================
+= Accesibilidad
+==========================*/
+
+:focus-visible{
+
+    outline:3px solid var(--color-verde);
+
+    outline-offset:3px;
+
+}
+
+
+/*=========================
+= Animaciones finales
+==========================*/
+
+@keyframes fade{
+
+    from{
+
+        opacity:0;
+
+    }
+
+    to{
+
+        opacity:1;
+
+    }
+
+}
+
+@keyframes fadeUp{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(25px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@keyframes pulseSupport{
+
+    0%{
+
+        transform:scale(1);
+
+    }
+
+    50%{
+
+        transform:scale(1.05);
+
+    }
+
+    100%{
+
+        transform:scale(1);
+
+    }
+
+}
+
+
+/*=========================
+= Pantallas grandes
+==========================*/
+
+@media(min-width:1200px){
+
+    .main-container{
+
+        max-width:1100px;
+
+    }
+
+}
+
+
+/*=========================
+= Pantallas pequeñas
+==========================*/
+
+@media(max-width:480px){
+
+    .welcome-card{
+
+        padding:20px;
+
+    }
+
+    .brand h1{
+
+        font-size:1.6rem;
+
+    }
+
+    .welcome-card h2{
+
+        font-size:1.5rem;
+
+    }
+
+    .option-button{
+
+        font-size:15px;
+
+        padding:15px;
+
+    }
+
+    footer{
+
+        padding:35px 20px;
+
+    }
+
+}
+
+
+/*==================================================
+  FIN DEL ARCHIVO style.css
+==================================================*/
